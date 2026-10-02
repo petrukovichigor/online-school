@@ -206,5 +206,5 @@ online-school/
     └── ui/
         ├── auth_window.py        # Вход и регистрация
         ├── student_dashboard.py  # Каталог, «Мои курсы», уроки, ДЗ, оценки
-        └── teacher_dashboard.py  # Мои курсы, студенты, уроки, проверка ДЗ.
+        └── teacher_dashboard.py  # Мои курсы, студенты, уроки, проверка ДЗ
 ```
