@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 
 # Загружаем переменные из файла .env
-load_dotenv()
+load_dotenv(encoding='utf-8')
 
 DB_HOST = os.getenv("DB_HOST", "localhost")
 DB_PORT = os.getenv("DB_PORT", "5432")
