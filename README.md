@@ -180,7 +180,7 @@ online-school/
 │   ├── schema.sql            # DDL: таблицы, ключи, ограничения
 │   ├── seed.sql              # DML: тестовые данные одной транзакцией
 │   ├── er_diagram.png        # ER-диаграмма
-│   └── mock_data/            # Тестовые данные в CSV
+│   └── csv_data/            # Тестовые данные в CSV
 │       ├── categories.csv
 │       ├── teachers.csv
 │       ├── students.csv
@@ -198,12 +198,12 @@ online-school/
     │   ├── auth_queries.py       # Вход и регистрация
     │   ├── catalog_queries.py    # Категории и каталог курсов
     │   ├── student_queries.py    # Подписки, оплата, уроки, сдача ДЗ
-    │   └── teacher_queries.py    # Курсы, уроки, задания, проверка работ
+    │   └── teacher_queries.py    # Курсы, уроки, задания
     ├── services/
     │   ├── auth.py               # Хеширование и проверка паролей (bcrypt)
     │   └── payments.py           # Смена статусов подписки и платежа
     └── ui/
-        ├── auth_window.py        # Вход и регистрация
-        ├── student_dashboard.py  # Каталог, «Мои курсы», уроки, ДЗ, оценки
-        └── teacher_dashboard.py  # Мои курсы, студенты, уроки, проверка ДЗ
+        ├── auth_ui.py        # Вход и регистрация
+        ├── student_ui.py  # Каталог, «Мои курсы», уроки, ДЗ, оценки
+        └── teacher_ui.py  # Мои курсы, студенты, уроки, ДЗ
 ```
