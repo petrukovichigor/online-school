@@ -1,9 +1,20 @@
-# Виртуальные окружения (все возможные варианты)
+# Виртуальные окружения
 .venv/
 venv/
 ENV/
 env/
+
+# Секреты подключения к БД
 .env
+
+# Кэш Python
+__pycache__/
+*.pyc
+
+# Сборка PyInstaller
+build/
+dist/
+*.spec
 
 # Системные файлы Mac и Windows
 .DS_Store
