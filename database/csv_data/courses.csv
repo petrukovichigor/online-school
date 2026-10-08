@@ -1,0 +1,16 @@
+course_id,title,description,price,category_id,teacher_id
+1,Python Basics,Online course: Python Basics. Video lessons on YouTube with homework.,200.00,1,2
+2,SQL and PostgreSQL,Online course: SQL and PostgreSQL. Video lessons on YouTube with homework.,180.00,1,2
+3,Web Development with JavaScript,Online course: Web Development with JavaScript. Video lessons on YouTube with homework.,120.00,1,2
+4,Data Analysis with Pandas,Online course: Data Analysis with Pandas. Video lessons on YouTube with homework.,250.00,1,2
+5,English for Beginners,Online course: English for Beginners. Video lessons on YouTube with homework.,110.00,2,3
+6,Business English,Online course: Business English. Video lessons on YouTube with homework.,140.00,2,4
+7,German A1,Online course: German A1. Video lessons on YouTube with homework.,90.00,2,4
+8,Polish for Beginners,Online course: Polish for Beginners. Video lessons on YouTube with homework.,120.00,2,4
+9,UI/UX Design in Figma,Online course: UI/UX Design in Figma. Video lessons on YouTube with homework.,90.00,3,6
+10,Graphic Design Basics,Online course: Graphic Design Basics. Video lessons on YouTube with homework.,150.00,3,5
+11,Adobe Photoshop,Online course: Adobe Photoshop. Video lessons on YouTube with homework.,90.00,3,6
+12,SMM Fundamentals,Online course: SMM Fundamentals. Video lessons on YouTube with homework.,110.00,4,8
+13,Digital Marketing Strategy,Online course: Digital Marketing Strategy. Video lessons on YouTube with homework.,110.00,4,8
+14,Personal Finance,Online course: Personal Finance. Video lessons on YouTube with homework.,110.00,5,10
+15,Project Management Basics,Online course: Project Management Basics. Video lessons on YouTube with homework.,110.00,5,9

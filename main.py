@@ -9,13 +9,10 @@ def main():
         print("Приложение остановлено из-за ошибки подключения к БД.")
         sys.exit(1)
 
-    # 2. Если всё ок, дальше пойдет запуск вашего GUI
+    # 2. Если всё ок - запуск GUI
     print("Инициализация интерфейса...")
     # Здесь позже импортируете и вызовете окно авторизации:
     # from src.ui.auth_window import AuthWindow
-    # app = AuthWindow()
-    # app.mainloop()
-
 
 if __name__ == "__main__":
     main()

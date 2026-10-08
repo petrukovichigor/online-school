@@ -1,0 +1,11 @@
+teacher_id,first_name,last_name,email,password_hash,phone_number,salary
+1,Mikhail,Sakalou,mikhail.sakalou@school.by,$2b$12$GtxavrYRaH0iuxT8nDQIl.iavxSXHfqp6GLLPGrzq7CHoe0K1AmMe,+375296539837,2100.00
+2,Darya,Zhuk,darya.zhuk65@school.by,$2b$12$GtxavrYRaH0iuxT8nDQIl.iavxSXHfqp6GLLPGrzq7CHoe0K1AmMe,+375447751158,2300.00
+3,Maryia,Bandarenka,maryia.bandarenka54@school.by,$2b$12$GtxavrYRaH0iuxT8nDQIl.iavxSXHfqp6GLLPGrzq7CHoe0K1AmMe,+375336049101,1950.00
+4,Aliaksandr,Zhuk,aliaksandr.zhuk@school.by,$2b$12$GtxavrYRaH0iuxT8nDQIl.iavxSXHfqp6GLLPGrzq7CHoe0K1AmMe,+375448801207,1950.00
+5,Yuliya,Yakimovich,yuliya.yakimovich@school.by,$2b$12$GtxavrYRaH0iuxT8nDQIl.iavxSXHfqp6GLLPGrzq7CHoe0K1AmMe,+375449647849,2300.00
+6,Kiryl,Petrou,kiryl.petrou@school.by,$2b$12$GtxavrYRaH0iuxT8nDQIl.iavxSXHfqp6GLLPGrzq7CHoe0K1AmMe,+375334340845,1650.00
+7,Anastasiya,Sidarenka,anastasiya.sidarenka@school.by,$2b$12$GtxavrYRaH0iuxT8nDQIl.iavxSXHfqp6GLLPGrzq7CHoe0K1AmMe,+375337442089,1950.00
+8,Maryia,Babich,maryia.babich@school.by,$2b$12$GtxavrYRaH0iuxT8nDQIl.iavxSXHfqp6GLLPGrzq7CHoe0K1AmMe,+375298132769,1650.00
+9,Veranika,Paulava,veranika.paulava@school.by,$2b$12$GtxavrYRaH0iuxT8nDQIl.iavxSXHfqp6GLLPGrzq7CHoe0K1AmMe,,1500.00
+10,Iryna,Sakalova,iryna.sakalova68@school.by,$2b$12$GtxavrYRaH0iuxT8nDQIl.iavxSXHfqp6GLLPGrzq7CHoe0K1AmMe,,1950.00

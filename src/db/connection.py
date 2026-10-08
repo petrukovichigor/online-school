@@ -16,11 +16,10 @@ def get_db_connection():
         raise error
 
 def test_connection():
-    """Проверяет, работает ли подключение к базе данных."""
     try:
         conn = get_db_connection()
         with conn.cursor() as cur:
-            # Делаем простейший тестовый запрос
+            # Простейший тестовый запрос
             cur.execute("SELECT version();")
             db_version = cur.fetchone()
             print("=== [DB] Подключение успешно установлено! ===")
