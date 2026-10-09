@@ -37,7 +37,7 @@ SELECT
     title
 FROM lessons
 WHERE course_id IN (1, 2, 3)
-  AND (position = 1 OR position = 2 or position = 3)
+  AND (position = 1 OR position = 2)
 ORDER BY course_id, position;
 
 -- Студенты с хотя бы одной активной подпиской, без повторов
