@@ -1,3 +1,4 @@
+-- Уроки, в названии которых есть слово «Basic» (для поиска)
 SELECT
     lesson_id,
     title,
@@ -6,6 +7,7 @@ FROM lessons
 WHERE title LIKE '%Basic%'
 ORDER BY lesson_id;
 
+-- Преподаватели с зарплатой от 1800 до 2200 и зарплата «на руки» после налога 13%, по убыванию
 SELECT
     teacher_id,
     first_name,
@@ -16,6 +18,7 @@ FROM teachers
 WHERE salary BETWEEN 1800 AND 2200
 ORDER BY salary DESC;
 
+-- Преподаватели без телефона
 SELECT
     teacher_id,
     first_name,
@@ -26,6 +29,7 @@ FROM teachers
 WHERE phone_number IS NULL
 ORDER BY teacher_id;
 
+-- Первый или второй урок курсов 1, 2 и 3
 SELECT
     lesson_id,
     course_id,
@@ -36,6 +40,7 @@ WHERE course_id IN (1, 2, 3)
   AND (position = 1 OR position = 2 or position = 3)
 ORDER BY course_id, position;
 
+-- Студенты с хотя бы одной активной подпиской, без повторов
 SELECT DISTINCT
     s.student_id,
     s.first_name,

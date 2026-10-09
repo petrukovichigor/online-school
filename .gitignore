@@ -23,3 +23,7 @@ Thumbs.db
 # Настройки сред разработки
 .idea/
 .vscode/
+
+# Черновое Игоря
+shortcutsPC.md
+testing_igor.sql
