@@ -26,4 +26,5 @@ Thumbs.db
 
 # Черновое Игоря
 shortcutsPC.md
-testing_igor.sql
+database/testing_queries.sql
+database/cleaning_db.sql
