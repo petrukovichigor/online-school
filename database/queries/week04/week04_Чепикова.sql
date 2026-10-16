@@ -4,7 +4,8 @@ SELECT
     COUNT(subscr_id) AS subscription_count
 FROM course_subscriptions
 GROUP BY course_id
-order by subscription_count desc;
+ORDER BY subscription_count desc;
+
 --- Сколько подписок каждого статуса на каждом курсе
 SELECT 
     course_id, 
@@ -12,7 +13,7 @@ SELECT
     COUNT(subscr_id) AS subscription_count
 FROM course_subscriptions
 GROUP BY course_id, status
-order by course_id;
+ORDER BY course_id;
 
 --- Студенты с 3 и более активными подписками, от самых активны
 SELECT 
@@ -24,14 +25,13 @@ GROUP BY student_id
 HAVING COUNT(subscr_id) >= 3
 ORDER BY active_subscriptions_count DESC;
 
-
 --- Количество уроков в каждом курсе через максимальную позицию урока
 SELECT 
     course_id, 
     MAX(position) AS total_lessons
 FROM lessons
 GROUP BY course_id
-order by course_id;
+ORDER BY course_id;
 
 --- Фонд зарплаты и средняя зарплата преподавателей
 SELECT 
