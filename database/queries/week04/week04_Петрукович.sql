@@ -25,8 +25,8 @@ GROUP BY teacher_id
 ORDER BY teacher_id;
 
 --Преподаватели, которые ведут 2 и более курса в одной категории [GROUP BY по двум столбцам, HAVING]
-SELECT teacher_id teachers_ids_with_at_least_2_courses_in_category, COUNT(course_id) number_of_courses
+SELECT teacher_id, COUNT(course_id) number_of_courses
 FROM courses
 GROUP BY teacher_id, category_id
-HAVING COUNT(course_id) > 2
+HAVING COUNT(course_id) >= 2
 ORDER BY number_of_courses DESC;
