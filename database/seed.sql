@@ -1,6 +1,3 @@
--- seed.sql: test data for online_school
--- Run after scheme.sql on an empty database (IDs are assigned by SERIAL in insert order)
-
 BEGIN;
 
 -- categories (10 rows)
