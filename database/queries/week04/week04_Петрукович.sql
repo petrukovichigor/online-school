@@ -18,13 +18,13 @@ FROM courses
 GROUP BY category_id
 ORDER BY category_id;
 
---Самый дешёвый и самый дорогой курс у каждого преподавателя [MIN/MAX]
+--Самый дешёвый и самый дорогой курс у каждого преподавателя
 SELECT teacher_id, MIN(price) AS cheapest_course, MAX(price) AS most_expensive_course
 FROM courses
 GROUP BY teacher_id
 ORDER BY teacher_id;
 
---Преподаватели, которые ведут 2 и более курса в одной категории [GROUP BY по двум столбцам, HAVING]
+--Преподаватели, которые ведут 2 и более курса в одной категории
 SELECT teacher_id, COUNT(course_id) number_of_courses
 FROM courses
 GROUP BY teacher_id, category_id
