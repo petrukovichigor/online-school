@@ -7,8 +7,8 @@ JOIN teachers ON teachers.teacher_id = courses.teacher_id
 ORDER BY Category, Price DESC;
 
 --История оплат студента: курс, сумма, статус платежа и статус подписки
-SELECT students.first_name || ' ' || students.last_name AS Student, courses.title AS Course,
-    payments.amount Amount, payments.status AS Payment_Status, course_subscriptions.status AS Subscription_Status
+SELECT students.first_name || ' ' || students.last_name Student, courses.title Course,
+    payments.amount Amount, payments.status Payment_Status, course_subscriptions.status Subscription_Status
 FROM course_subscriptions
 JOIN students ON students.student_id = course_subscriptions.student_id
 JOIN courses ON courses.course_id = course_subscriptions.course_id
