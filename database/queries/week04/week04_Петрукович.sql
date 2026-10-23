@@ -19,7 +19,7 @@ GROUP BY category_id
 ORDER BY category_id;
 
 --Самый дешёвый и самый дорогой курс у каждого преподавателя
-SELECT teacher_id, MIN(price) AS cheapest_course, MAX(price) AS most_expensive_course
+SELECT teacher_id, MIN(price) cheapest_course, MAX(price) most_expensive_course
 FROM courses
 GROUP BY teacher_id
 ORDER BY teacher_id;
