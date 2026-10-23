@@ -36,5 +36,5 @@ ORDER BY course_id;
 --- Фонд зарплаты и средняя зарплата преподавателей
 SELECT 
     SUM(salary) AS total_salary_fund, 
-    AVG(salary) AS average_salary
+    ROUND(AVG(salary),2) AS average_salary
 FROM teachers;

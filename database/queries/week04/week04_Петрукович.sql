@@ -13,7 +13,7 @@ GROUP BY status
 ORDER BY sum_of_payments DESC;
 
 --Средняя цена курса в каждой категории
-SELECT category_id, AVG(price) average_price
+SELECT category_id, ROUND(AVG(price),2) average_price
 FROM courses
 GROUP BY category_id
 ORDER BY category_id;

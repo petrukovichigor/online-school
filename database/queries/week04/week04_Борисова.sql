@@ -1,5 +1,5 @@
 --Средняя оценка по каждой домашке, только проверенные работы
-SELECT homework_id, AVG(grade) average_grade
+SELECT homework_id, ROUND(AVG(grade),2) average_grade
 FROM homework_submissions
 WHERE grade IS NOT NULL
 GROUP BY homework_id
@@ -12,11 +12,11 @@ GROUP BY student_id
 ORDER BY rating DESC;
 
 --Задания со средней оценкой ниже 6 (слишком сложные задания)
-SELECT homework_id hard_homeworks, AVG(grade) average_mark
+SELECT homework_id hard_homeworks, ROUND(AVG(grade),2) average_grade
 FROM homework_submissions
 GROUP BY homework_id
 HAVING AVG(grade) < 6
-ORDER BY average_mark DESC;
+ORDER BY average_grade DESC;
 
 --Лучшая и худшая оценка каждого студента
 SELECT student_id, MIN(grade) worst_grade, MAX(grade) best_grade
