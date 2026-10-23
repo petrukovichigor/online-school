@@ -48,7 +48,7 @@ SELECT student_id
 FROM course_subscriptions
 INNER JOIN courses ON course_subscriptions.course_id = courses.course_id
 INNER JOIN categories ON courses.category_id = categories.category_id
-WHERE name LIKE 'Programming' AND status = 'active'
+WHERE (name LIKE 'Programming') AND status = 'active'
 
 INTERSECT
 
@@ -56,4 +56,5 @@ SELECT student_id
 FROM course_subscriptions
 INNER JOIN courses ON course_subscriptions.course_id = courses.course_id
 INNER JOIN categories ON courses.category_id = categories.category_id
-WHERE (name LIKE 'Foreign Languages') AND status = 'active';
+WHERE (name LIKE 'Foreign Languages') AND status = 'active'
+ORDER BY student_id;

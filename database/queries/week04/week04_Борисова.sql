@@ -1,4 +1,4 @@
---Средняя оценка по каждой домашке, только проверенные работы, от лёгких к сложным
+--Средняя оценка по каждой домашке, только проверенные работы
 SELECT homework_id, AVG(grade) average_grade
 FROM homework_submissions
 WHERE grade IS NOT NULL
