@@ -1,7 +1,8 @@
 -- Курсы, в названии которых есть «English» или «Design»
 SELECT *
 FROM courses
-WHERE title LIKE '%English%' OR title LIKE '%Design%';
+WHERE title LIKE '%English%'
+   OR title LIKE '%Design%';
 
 -- Непроверенные работы (очередь проверки для преподавателя)
 SELECT *
@@ -17,7 +18,7 @@ ORDER BY grade DESC;
 -- Курсы категорий "Дизайн" и "Программирование" дороже 100 руб
 SELECT name, title, description
 FROM courses
-JOIN categories ON courses.category_id = categories.category_id
+         JOIN categories ON courses.category_id = categories.category_id
 WHERE categories.name IN ('Programming', 'Design')
   AND courses.price > 100
 ORDER BY name;
@@ -27,5 +28,5 @@ ORDER BY name;
 -- На данный момент в нашей БД все дз сделаны
 SELECT DISTINCT hs.homework_id, h.description
 FROM homework_submissions hs
-JOIN homeworks h ON h.homework_id = hs.homework_id
+         JOIN homeworks h ON h.homework_id = hs.homework_id
 ORDER BY hs.homework_id;

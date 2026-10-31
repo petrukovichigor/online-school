@@ -1,24 +1,21 @@
 --- Количество подписок на каждый курс (популярность курсов)
-SELECT 
-    course_id, 
-    COUNT(subscr_id) AS subscription_count
+SELECT course_id,
+       COUNT(subscr_id) AS subscription_count
 FROM course_subscriptions
 GROUP BY course_id
 ORDER BY subscription_count desc;
 
 --- Сколько подписок каждого статуса на каждом курсе
-SELECT 
-    course_id, 
-    status, 
-    COUNT(subscr_id) AS subscription_count
+SELECT course_id,
+       status,
+       COUNT(subscr_id) AS subscription_count
 FROM course_subscriptions
 GROUP BY course_id, status
 ORDER BY course_id;
 
 --- Студенты с 3 и более активными подписками, от самых активны
-SELECT 
-    student_id, 
-    COUNT(subscr_id) AS active_subscriptions_count
+SELECT student_id,
+       COUNT(subscr_id) AS active_subscriptions_count
 FROM course_subscriptions
 WHERE status = 'active'
 GROUP BY student_id
@@ -26,15 +23,13 @@ HAVING COUNT(subscr_id) >= 3
 ORDER BY active_subscriptions_count DESC;
 
 --- Количество уроков в каждом курсе через максимальную позицию урока
-SELECT 
-    course_id, 
-    MAX(position) AS total_lessons
+SELECT course_id,
+       MAX(position) AS total_lessons
 FROM lessons
 GROUP BY course_id
 ORDER BY course_id;
 
 --- Фонд зарплаты и средняя зарплата преподавателей
-SELECT 
-    SUM(salary) AS total_salary_fund, 
-    ROUND(AVG(salary),2) AS average_salary
+SELECT SUM(salary)           AS total_salary_fund,
+       ROUND(AVG(salary), 2) AS average_salary
 FROM teachers;
