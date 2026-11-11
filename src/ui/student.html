@@ -1,10 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Online School — студент</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<aside class="side">
+  <div class="brand">Online <span>School</span></div>
+  <button class="nav on" data-go="catalog">Каталог</button>
+  <button class="nav" data-go="my">Мои курсы</button>
+  <button class="nav" data-go="grades">Мои оценки</button>
+  <div class="me"><b id="userName">Студент</b><span id="userEmail"></span><br><button id="logout">Выйти</button></div>
+</aside>
 
+<main>
+  <section class="screen on" id="catalog">
+    <h1>Каталог курсов</h1>
+    <p class="sub">Выберите курс, оплатите его и начните учиться.</p>
+    <div class="chips" id="chips"></div>
+    <div class="grid" id="courseGrid"></div>
+  </section>
+
+  <section class="screen" id="course">
+    <button class="back" data-go="catalog">‹ Назад в каталог</button>
+    <div class="row">
+      <div class="panel" style="flex:2">
+        <h1 id="cTitle"></h1>
+        <p class="sub" id="cMeta"></p>
+        <p id="cDesc"></p>
+        <h2>Программа курса</h2>
+        <ul class="list" id="cLessons"></ul>
+      </div>
+      <div class="panel">
+        <div class="price" style="font-size:26px" id="cPrice"></div>
+        <p class="sub" id="cState" style="margin:8px 0 16px"></p>
+        <button class="btn" id="cBuy">Купить</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen" id="my">
+    <h1>Мои курсы</h1>
+    <p class="sub">Уроки открываются после оплаты.</p>
+    <div class="grid" id="myGrid"></div>
+  </section>
+
+  <section class="screen" id="lessons">
+    <button class="back" data-go="my">‹ Мои курсы</button>
+    <h1 id="lTitle"></h1>
+    <p class="sub" id="lTeacher"></p>
+    <div class="row">
+      <div class="panel" style="flex:2">
+        <iframe class="video" id="video" title="Видеоурок" allowfullscreen></iframe>
+        <h2 id="lessonTitle"></h2>
+        <div id="hwBox"></div>
+      </div>
+      <div class="panel"><b>Уроки</b><ul class="list" id="lessonList" style="margin-top:8px"></ul></div>
+    </div>
+  </section>
+
+  <section class="screen" id="grades">
+    <h1>Мои оценки</h1>
+    <p class="sub">Оценка по 10-балльной шкале появляется после проверки преподавателем.</p>
+    <div id="gradesBox"></div>
+  </section>
+</main>
+<div class="toast" id="toast"></div>
+<script src="js/app.js"></script>
 </body>
 </html>
