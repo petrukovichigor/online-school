@@ -56,7 +56,7 @@ UNION ALL
  ORDER BY revenue);
 
 -- Выручка по категориям и доля каждой в общей выручке, в процентах (финансовый отчёт)
--- С использованием SUM() OVER()
+-- С использованием CTE и SUM()...OVER()
 WITH CategoryRevenue AS (SELECT categories.name    AS category_name,
                                 SUM(courses.price) AS category_revenue
                          FROM courses
