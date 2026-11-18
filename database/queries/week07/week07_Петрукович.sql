@@ -71,3 +71,22 @@ ORDER BY teacher_id;
 SELECT *
 FROM teacher_courses_view
 WHERE teacher_id = 2;
+
+-- 6. ПРЕДСТАВЛЕНИЕ: Уроки курса с описанием домашнего задания
+CREATE OR REPLACE VIEW course_lessons_view AS
+SELECT c.course_id,
+       c.title       AS course_title,
+       l.position    AS lesson_position,
+       l.lesson_id,
+       l.title       AS lesson_title,
+       h.homework_id,
+       h.description AS homework_description
+FROM courses c
+         JOIN lessons l ON l.course_id = c.course_id
+         LEFT JOIN homeworks h ON l.lesson_id = h.lesson_id
+ORDER BY c.course_id, lesson_position;
+
+-- 6*. Тестируем представление
+SELECT *
+FROM course_lessons_view
+WHERE course_id = 52;
