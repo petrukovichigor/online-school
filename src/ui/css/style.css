@@ -1,7 +1,7 @@
 :root{--ink:#14232B;--teal:#0F4C5C;--teal2:#1B6B7E;--mark:#F2C94C;--paper:#F5F6F2;--card:#fff;--line:#DDE2DC;--mute:#5E6E74;--ok:#2E7D5B;--warn:#9A6A12;--bad:#B3402F}
 *{box-sizing:border-box;margin:0}
 html,body{height:100%}
-body{font:15px/1.5 "Segoe UI",system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--paper);display:flex}
+body{font:15px/1.5 "Montserrat",system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--paper);display:flex}
 button,input{font:inherit;color:inherit}
 :focus-visible{outline:3px solid var(--mark);outline-offset:2px}
 .side{width:250px;flex:none;background:var(--teal);color:#EAF3F4;display:flex;flex-direction:column;padding:24px 16px;gap:4px}
@@ -57,3 +57,43 @@ th{font-size:13px;color:var(--mute);font-weight:600;background:#FAFBF9}
 .toast.on{opacity:1;transform:none}
 @media(max-width:760px){body{flex-direction:column}.side{width:100%;flex-direction:row;flex-wrap:wrap;padding:12px}.brand{padding:0 8px;width:100%}.me{display:none}main{padding:20px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+/* v2 */
+.brand{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:700;padding:0 8px 24px}
+.brand b{font-weight:700;color:var(--mark)}
+.logo{width:36px;height:36px;flex:none}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.toolbar input,.toolbar select,.fld input,.fld select,.fld textarea,td select,td input{border:1px solid var(--line);border-radius:8px;padding:9px 12px;background:#fff;min-width:0}
+.toolbar .grow{flex:1;min-width:200px}.toolbar input[type=number]{width:96px}
+.chk{display:flex;gap:6px;align-items:center;color:var(--mute);cursor:pointer}
+.count{color:var(--mute);font-size:13px;margin:0 0 12px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:20px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px}
+.stat b{display:block;font-size:26px;color:var(--teal);letter-spacing:-.5px}.stat span{color:var(--mute);font-size:13px}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:16px}
+.tab{background:none;border:0;padding:10px 16px;cursor:pointer;color:var(--mute);border-bottom:3px solid transparent}
+.tab.on{color:var(--ink);font-weight:600;border-color:var(--mark)}
+.course{cursor:pointer}
+.acts{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.btn.sm{padding:6px 12px;font-size:13px}
+.btn.danger{background:var(--bad)}.btn.ghost.danger{background:none;color:var(--bad);border-color:var(--bad)}
+.lrow{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}.lrow .grow{flex:1}
+.lrow small{color:var(--mute);display:block}
+dialog{border:0;border-radius:14px;padding:24px;width:min(460px,92vw);box-shadow:0 20px 60px rgba(20,35,43,.3)}
+dialog::backdrop{background:rgba(20,35,43,.5)}
+.dbody{margin:12px 0}.dact{display:flex;gap:8px;justify-content:flex-end}
+.fld{display:flex;flex-direction:column;gap:4px;margin-bottom:12px;font-size:13px;color:var(--mute)}
+.fld input,.fld select,.fld textarea{font-size:15px;color:var(--ink)}
+.err{color:var(--bad);font-size:13px;min-height:18px}
+.auth{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;width:100%}
+.auth .hero{background:var(--teal);color:#fff;padding:56px;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.auth .hero .logo{width:64px;height:64px}.auth .hero h1{font-size:36px;line-height:1.15}
+.auth .hero p{color:#CFE3E6;max-width:380px}
+.auth .box{display:flex;align-items:center;justify-content:center;padding:32px}
+.auth form{width:100%;max-width:380px}
+.seg{display:flex;background:#E8ECE6;border-radius:10px;padding:4px;margin-bottom:16px}
+.seg button{flex:1;border:0;background:none;padding:8px;border-radius:7px;cursor:pointer}
+.seg button.on{background:#fff;font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:760px){.auth{grid-template-columns:1fr}.auth .hero{padding:28px}.auth .hero h1{font-size:26px}}
+dialog{margin:auto}
+button,input,select,textarea,option{font:inherit;color:inherit}
