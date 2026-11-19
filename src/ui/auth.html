@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Online School — Sign in</title><link rel="stylesheet" href="css/style.css"></head>
+<body data-page="auth">
+<div class="auth">
+  <section class="hero"><svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#F2C94C"/><path d="M8 13c4.5-2 8.500-2 12 1v15c-3.500-3-7.500-3-12-1zM32 13c-4.500-2-8.500-2-12 1v15c3.500-3 7.500-3 12-1z" fill="#0F4C5C"/><path d="M26 6h5v9l-2.500-2L26 15z" fill="#B3402F"/></svg><h1>Learn wherever it suits you</h1><p>Courses in programming, languages, design, marketing and business. Video lessons, homework and grades in one window.</p></section>
+  <section class="box"><form id="form" novalidate>
+    <h1 id="ttl">Sign in</h1><p class="sub" id="sub">Sign in to continue.</p>
+    <div class="seg" id="role"><button type="button" class="on" data-v="student">Student</button><button type="button" data-v="teacher">Teacher</button></div>
+    <div class="seg" id="mode"><button type="button" class="on" data-v="login">Sign in</button><button type="button" data-v="register">Sign up</button></div>
+    <div id="regOnly" hidden><div class="two"><label class="fld">First name<input id="fn"></label><label class="fld">Last name<input id="ln"></label></div>
+      <label class="fld">Phone<input id="ph" placeholder="+375291234567"></label></div>
+    <label class="fld">Email<input id="em" type="email" autocomplete="username"></label>
+    <label class="fld">Password<input id="pw" type="password" autocomplete="current-password"></label>
+    <div class="err" id="err" role="alert"></div>
+    <button class="btn" style="width:100%" id="go">Sign in</button>
+    <p class="sub" id="note" style="margin:12px 0 0" hidden>Teacher accounts are created by the school administrator.</p>
+  </form></section>
+</div>
+<script src="js/app.js"></script></body></html>

@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Online School — Teacher</title><link rel="stylesheet" href="css/style.css"></head>
+<body data-page="teacher">
+<aside class="side">
+  <div class="brand"><svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#F2C94C"/><path d="M8 13c4.5-2 8.500-2 12 1v15c-3.500-3-7.500-3-12-1zM32 13c-4.500-2-8.500-2-12 1v15c3.500-3 7.500-3 12-1z" fill="#0F4C5C"/><path d="M26 6h5v9l-2.500-2L26 15z" fill="#B3402F"/></svg><span>Online <b>School</b></span></div>
+  <button class="nav on" data-go="tcourses">My courses</button>
+  <div class="me"><b id="userName">Teacher</b><span id="userEmail"></span><br><button id="logout">Log out</button></div>
+</aside>
+<main>
+  <section class="screen on" id="tcourses">
+    <div class="toolbar"><div class="grow"><h1>My courses</h1><p class="sub" style="margin:0">Your courses and students.</p></div><button class="btn" id="newCourse">+ New course</button></div>
+    <div class="stats" id="tStats"></div><div class="grid" id="tGrid"></div>
+  </section>
+  <section class="screen" id="tcourse">
+    <button class="back" data-go="tcourses">‹ My courses</button><h1 id="tcTitle"></h1><p class="sub" id="tcMeta"></p>
+    <div class="tabs" id="tTabs"></div><div id="tBody"></div>
+  </section>
+</main>
+<dialog id="dlg"></dialog><div class="toast" id="toast"></div>
+<script src="js/theme.js"></script>
+<script src="js/app.js"></script></body></html>
