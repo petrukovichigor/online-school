@@ -1,17 +1,15 @@
-import sys
+import webview
+
+from src.api import Api
 from src.db.connection import test_connection
 
-def main():
-    print("Запуск приложения Online School...")
-
-    # 1. Проверяем базу данных
-    if not test_connection():
-        print("Приложение остановлено из-за ошибки подключения к БД.")
-        sys.exit(1)
-
-    # 2. Если всё ок - запуск GUI
-    print("Инициализация интерфейса...")
-    # Здесь позже импортируете и вызовете окно авторизации
-
 if __name__ == "__main__":
-    main()
+    if test_connection():
+        webview.create_window(
+            title="Online School",
+            url="src/ui/auth.html",
+            js_api=Api(),
+            fullscreen=True
+        )
+
+        webview.start(http_server=True)
