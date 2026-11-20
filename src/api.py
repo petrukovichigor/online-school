@@ -7,6 +7,7 @@ import traceback
 import psycopg2.errors
 
 from src.db import auth_queries, catalog_queries as cat, student_queries as stu, teacher_queries as tea
+from src.db.connection import current_actor
 from src.services import auth, payments
 
 
@@ -17,19 +18,23 @@ def access(*roles):
         def wrapper(self, *args):
             if not self._user or (roles and self._user["role"] not in roles):
                 return None
-            for attempt in (1, 2):
-                started = time.perf_counter()
-                try:
-                    result = fn(self, *args)
-                    print(f"[api] {fn.__name__}: {(time.perf_counter() - started) * 1000:.0f} ms")
-                    return result
-                except (psycopg2.OperationalError, psycopg2.InterfaceError):
-                    if attempt == 2:  # a stale pooled connection is retried once
+            token = current_actor.set(f"{self._user['role']}:{self._user['id']}")  # goes to audit_log.actor
+            try:
+                for attempt in (1, 2):
+                    started = time.perf_counter()
+                    try:
+                        result = fn(self, *args)
+                        print(f"[api] {fn.__name__}: {(time.perf_counter() - started) * 1000:.0f} ms")
+                        return result
+                    except (psycopg2.OperationalError, psycopg2.InterfaceError):
+                        if attempt == 2:  # a stale pooled connection is retried once
+                            traceback.print_exc()
+                    except Exception:
                         traceback.print_exc()
-                except Exception:
-                    traceback.print_exc()
-                    return None
-            return None
+                        return None
+                return None
+            finally:
+                current_actor.reset(token)
         return wrapper
     return deco
 

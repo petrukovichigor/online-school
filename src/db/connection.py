@@ -1,4 +1,5 @@
 from contextlib import contextmanager
+from contextvars import ContextVar
 
 import psycopg2
 import psycopg2.extras
@@ -39,6 +40,10 @@ def test_connection():
         return False
 
 
+# Who makes the current call: 'student:12', 'teacher:3' (set in api.py) or 'app:anonymous' (sign up).
+# The audit trigger writes it to audit_log.actor; changes made outside the app have no value there.
+current_actor = ContextVar("current_actor", default="app:anonymous")
+
 _pool = None
 
 
@@ -56,14 +61,17 @@ def _get_pool():
 
 
 @contextmanager
-def tx():
-    """One transaction: commit on success, rollback on any error."""
+def tx(audit=True):
+    """One transaction: commit on success, rollback on any error.
+    audit=True tells the audit trigger who is acting (reads pass audit=False, they change nothing)."""
     p = _get_pool()
     conn = p.getconn()
     broken = False
     try:
         with conn:
             with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+                if audit:  # valid for this transaction only
+                    cur.execute("SELECT set_config('app.actor', %s, true)", (current_actor.get(),))
                 yield cur
     except (psycopg2.OperationalError, psycopg2.InterfaceError):
         broken = True  # drop this connection, the next call opens a fresh one
@@ -74,7 +82,7 @@ def tx():
 
 def query(sql, params=()):
     """SELECT -> list of dicts."""
-    with tx() as cur:
+    with tx(audit=False) as cur:
         cur.execute(sql, params)
         return [dict(r) for r in cur.fetchall()]
 
