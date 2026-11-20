@@ -1,4 +1,4 @@
--- 002: audit log. Every INSERT / UPDATE / DELETE on the main tables is recorded in audit_log.
+-- audit log. Every INSERT / UPDATE / DELETE on the main tables is recorded in audit_log.
 -- Run once, after scheme.sql and seed.sql (so the seed rows are not logged).
 BEGIN;
 
