@@ -19,16 +19,14 @@ WHERE courses.price > ALL (
 ORDER BY courses.price DESC, courses.course_id;
 
 
--- 2. Преподаватели, у которых есть работы на проверку (уведомление в кабинете)
+-- 2. Преподаватели, у которых есть работы на проверку 
 
 SELECT 
     teachers.teacher_id,
-    teachers.first_name,
     teachers.last_name,
-    teachers.email
 FROM teachers
 WHERE EXISTS (
-    SELECT 1
+    SELECT *
     FROM courses
     JOIN lessons ON lessons.course_id = courses.course_id
     JOIN homeworks ON homeworks.lesson_id = lessons.lesson_id
