@@ -20,15 +20,15 @@ DELETE FROM payments
 WHERE subscr_id IN (
     SELECT subscr_id
     FROM course_subscriptions
-    WHERE student_id = 1
-      AND course_id = 1
+    WHERE student_id = 10
+      AND course_id = 3
       AND status = 'pending'
 )
   AND status = 'pending';
 
 DELETE FROM course_subscriptions
-WHERE student_id = 1
-  AND course_id = 1
+WHERE student_id = 10
+  AND course_id = 3
   AND status = 'pending'
 RETURNING subscr_id, student_id, course_id, status;
 
@@ -41,13 +41,13 @@ BEGIN;
 UPDATE payments
 SET status = 'paid',
     transaction_id = '9f8e7d6c-5b4a-3210-fedc-ba9876543210'
-WHERE subscr_id = 1
+WHERE subscr_id = 219
   AND status = 'pending';
 
 
 UPDATE course_subscriptions
 SET status = 'active'
-WHERE subscr_id = 1
+WHERE subscr_id = 219
   AND status = 'pending'
 
 RETURNING subscr_id, student_id, course_id, status;
@@ -98,6 +98,5 @@ JOIN course_subscriptions ON payments.subscr_id = course_subscriptions.subscr_id
 JOIN students ON course_subscriptions.student_id = students.student_id
 JOIN courses ON course_subscriptions.course_id = courses.course_id
 ORDER BY payments.payment_id DESC;
-
 
 
