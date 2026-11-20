@@ -4,7 +4,7 @@ BEGIN;
 
 CREATE TABLE audit_log (
     log_id      BIGSERIAL    PRIMARY KEY,
-    changed_at  TIMESTAMPTZ  NOT NULL DEFAULT now(),
+    changed_at  TIMESTAMP  NOT NULL DEFAULT now(),
     table_name  VARCHAR(50)  NOT NULL,
     action      VARCHAR(6)   NOT NULL,
     actor       TEXT,        -- student:<id> | teacher:<id> | app:anonymous | external:<application_name> (<db user>)
