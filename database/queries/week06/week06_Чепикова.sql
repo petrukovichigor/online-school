@@ -23,7 +23,7 @@ ORDER BY courses.price DESC, courses.course_id;
 
 SELECT 
     teachers.teacher_id,
-    teachers.last_name,
+    teachers.last_name
 FROM teachers
 WHERE EXISTS (
     SELECT *
